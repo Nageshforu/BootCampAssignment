@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  data:
+    cassandra:
+      port: 9042
+      contact-points: my-cassandra-node
+      keyspace-name: bootcamp
+      entity-base-package: com.example.cassandra.springbootcassandrademo.Model
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: "my_group_id"
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
